@@ -11,12 +11,12 @@ void Stack::push(int x)
 {
     if(top >= 10)
     {
-        cout << "Stack Overflow \n";
+        std::cout << "Stack Overflow \n";
     }
     else
     {
         a[++top] = x;
-        cout << "Element Inserted \n";
+        std::cout << "Element Inserted \n";
     }
 }
 
@@ -25,7 +25,7 @@ int Stack::pop()
 {
     if(top < 0)
     {
-        cout << "Stack Underflow \n";
+        std::cout << "Stack Underflow \n";
         return 0;
     }
     else
@@ -40,10 +40,10 @@ void Stack::isEmpty()
 {
     if(top < 0)
     {
-        cout << "Stack is empty \n";
+        std::cout << "Stack is empty \n";
     }
     else
     {
-        cout << "Stack is not empty \n";
+        std::cout << "Stack is not empty \n";
     }
 }
