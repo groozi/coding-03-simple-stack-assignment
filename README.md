@@ -1,2 +1,1 @@
-# empty
-empty repository with only a readme
+Program to introduce a simple ADT (abstract data type) and understand the function and purpose of ADTs. Creating an integer stack with thorough testing.
