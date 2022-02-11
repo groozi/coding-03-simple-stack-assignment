@@ -7,4 +7,20 @@
 #ifndef STACK_H
 #define STACK_H
 
+class Stack
+{
+    int top;
+    public:
+    int a[10];  //Maximum size of Stack
+    Stack()
+    {
+        top = -1;
+    }
+    
+    // declaring all the function
+    void push(int x);
+    int pop();
+    void isEmpty();
+};
+
 #endif // STACK_H
