@@ -9,5 +9,11 @@
 int main(int argc, char** argv){
 	std::cout << "Hello, World!" << std::endl;
 
+	Stack s1;
+	s1.push(10);
+	s1.push(100);
+
     return 0;
 }
+
+
