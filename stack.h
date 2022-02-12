@@ -9,21 +9,19 @@
 
 #include <iostream>
 
-
 class Stack
 {
-    int top;
     public:
-    int a[10];  //Maximum size of Stack
-    Stack()
-    {
-        top = -1;
-    }
+    	Stack();
+    	Stack(int);
     
-    // declaring all the function
+    // declaring all the functions
     void push(int x);
     int pop();
-    void isEmpty();
+    bool isEmpty();
+
+    private:
+        int top;
 };
 
 #endif // STACK_H
