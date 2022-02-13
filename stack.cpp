@@ -6,44 +6,53 @@
 
 #include "stack.h"
 
+//constructor for stack
+Stack::Stack(){
+	stack = new int[SIZE];
+	top = -1;
+}
+
 // function to insert data into stack
-void Stack::push(int x)
+bool Stack::push(int entry)
 {
-    if(top >= 10)
+	bool executed = false; 
+
+    if(top < SIZE-1)
     {
-        std::cout << "Stack Overflow \n";
+        stack[++top] = entry;
+        executed = true;
+        std::cout << "Entry added to stack" << std::endl;
     }
     else
     {
-        a[++top] = x;
-        std::cout << "Element Inserted \n";
+        std::cout << "Overflow error " << std::endl;
     }
+    return executed;
 }
 
 // function to remove data from the top of the stack
-int Stack::pop()
+bool Stack::pop()
 {
-    if(top < 0)
-    {
-        std::cout << "Stack Underflow \n";
-        return 0;
-    }
-    else
-    {
-        int d = a[top--];
-        return d;
-    }
+	bool executed = false;
+
+	if (!isEmpty()){
+		executed = true;
+		top--;
+		std::cout << "top item removed" << std::endl;
+	}
+	else{
+		std::cout << "Underflow error " << std::endl;
+	}
+	return executed;
+    
 }
 
 // function to check if stack is empty
-void Stack::isEmpty()
+bool Stack::isEmpty()
 {
-    if(top < 0)
-    {
-        std::cout << "Stack is empty \n";
-    }
-    else
-    {
-        std::cout << "Stack is not empty \n";
-    }
+        return (top == -1);
+}
+
+int Stack::peek(){
+	return stack[top];
 }

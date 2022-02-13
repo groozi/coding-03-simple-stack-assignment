@@ -24,7 +24,7 @@ class Stack
 
     private:
         int top;
-        int stack[SIZE];
+        int *stack;
 };
 
 #endif // STACK_H
