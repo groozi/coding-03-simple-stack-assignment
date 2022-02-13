@@ -10,9 +10,8 @@ int main(int argc, char** argv){
 
 	Stack stack1;
 
-
-	for (int i = 0; i <= SIZE + 50; i++){
-		int randomNum = std::rand() % 2;
+	for (int i = 0; i <= SIZE + 1; i++){
+		int randomNum = std::rand() % 3;
 
 		switch (randomNum){
 			case 0:
@@ -22,37 +21,53 @@ int main(int argc, char** argv){
 				else {
 					std::cout << "Overflow Error" << std::endl;
 				}
-
 				break;
 
 			case 1:
-				if (stack1.pop()){
-					std::cout << "Element removed" << std::endl;
+				try {
+					stack1.pop();
+					std::cout << "Item removed from stack." << std::endl;
 				}
-				else {
-					std::cout << "Underflow Error" << std::endl;
+				catch (...){
+					std::cout << "Underflow error. No item to be removed from stack." << std::endl;
+
 				}
+
+			case 2: 
+					try {
+				std::cout << "Peeking into the stack. Current item: " << stack1.peek() << std::endl;
+			}
+			catch (...){
+
+				std::cout << "Peek failed." << std::endl;
+
+			}
+
 		}
 
-		try {
-			std::cout << "Peeking into stack: " << stack1.peek() << std::endl;
-		}
-		catch(...){
 
-			std::cout << "Peek unsuccessful. Stack is empty" << std::endl;
-		}
 
 		if (stack1.isEmpty()){
-			std::cout << "Stack is empty" << std::endl;
+			std::cout << "Stack is empty." << std::endl;
 		}
 		else {
-			std::cout << "Stack is not empty" << std::endl;
+			std::cout << "Stack is not empty." << std::endl;
 		}
-
-
-
     
-		}
+	}
+
+	stack1.printStack();
+
+
+
+
+		
+
+		
+
+
+
+
 	return 0;
 }
 
