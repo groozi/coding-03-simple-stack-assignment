@@ -17,16 +17,12 @@ bool Stack::push(int entry)
 {
 	bool executed = false; 
 
-    if(top < SIZE-1)
+    if(top < SIZE-1 && entry >= 0)
     {
         stack[++top] = entry;
         executed = true;
-        std::cout << "Entry added to stack" << std::endl;
     }
-    else
-    {
-        std::cout << "Overflow error " << std::endl;
-    }
+   
     return executed;
 }
 
@@ -38,10 +34,6 @@ bool Stack::pop()
 	if (!isEmpty()){
 		top--;
 		executed = true;
-		std::cout << "top item removed" << std::endl;
-	}
-	else{
-		std::cout << "Underflow error " << std::endl;
 	}
 	return executed;
 }

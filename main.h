@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include "stack.h"
+#include <cstdlib>
 
 #endif //STACK_MAIN_H
 
