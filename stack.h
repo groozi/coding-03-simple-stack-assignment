@@ -7,21 +7,24 @@
 #ifndef STACK_H
 #define STACK_H
 
+#define SIZE 10
 #include <iostream>
 
 class Stack
 {
     public:
-    	Stack();
-    	Stack(int);
+    Stack();
+    Stack(int);
     
     // declaring all the functions
-    void push(int x);
-    int pop();
+    bool push(int);
+    bool pop();
     bool isEmpty();
+    int peek();
 
     private:
         int top;
+        int stack[SIZE];
 };
 
 #endif // STACK_H
