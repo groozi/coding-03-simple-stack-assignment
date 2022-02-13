@@ -9,10 +9,9 @@
 int main(int argc, char** argv){
 	std::cout << "Hello, World!" << std::endl;
 
-	Stack stack1();
+	Stack stack1;
 	stack1.push(12);
-	std::cout << stack1.isEmpty() << std::endl;
-	stack1.peek();
+	std::cout << "Current element is: " << stack1.peek() << std::endl;
 	stack1.push(10);
 	stack1.peek();
 	stack1.pop();
