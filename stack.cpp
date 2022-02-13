@@ -56,3 +56,21 @@ bool Stack::isEmpty()
 int Stack::peek(){
 	return stack[top];
 }
+
+//function ONLY for debugging/testing purposes
+void Stack::printStack(){
+	if (!isEmpty()){
+		for (int i=0; i <= SIZE; i++){
+			std::cout << "Element at position " << i << " is " << stack[i] << std::endl;
+		}
+	}
+	else {
+		std::cout << "Stack is currently empty" << std::endl;
+	}
+
+
+}
+
+
+
+

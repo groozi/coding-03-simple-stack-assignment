@@ -21,6 +21,7 @@ class Stack
     bool pop();
     bool isEmpty();
     int peek();
+    void printStack(); //for debugging purposes only
 
     private:
         int top;
