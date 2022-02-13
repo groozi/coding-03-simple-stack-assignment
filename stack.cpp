@@ -36,15 +36,14 @@ bool Stack::pop()
 	bool executed = false;
 
 	if (!isEmpty()){
-		executed = true;
 		top--;
+		executed = true;
 		std::cout << "top item removed" << std::endl;
 	}
 	else{
 		std::cout << "Underflow error " << std::endl;
 	}
 	return executed;
-    
 }
 
 // function to check if stack is empty
@@ -67,8 +66,6 @@ void Stack::printStack(){
 	else {
 		std::cout << "Stack is currently empty" << std::endl;
 	}
-
-
 }
 
 
