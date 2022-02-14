@@ -10,41 +10,34 @@ int main(int argc, char** argv){
 
 	Stack stack1;
 
-	for (int i = 0; i <= SIZE + 1; i++){
-		int randomNum = std::rand() % 3;
+	for (int i = 0; i <= SIZE + 200; i++){
+		int randomNum = std::rand() % 2;
 
-		switch (randomNum){
-			case 0:
-				if (stack1.push(i)){
-					std::cout << "Element inserted" << std::endl;
-				}
-				else {
-					std::cout << "Overflow Error" << std::endl;
-				}
-				break;
-
-			case 1:
-				try {
-					stack1.pop();
-					std::cout << "Item removed from stack." << std::endl;
-				}
-				catch (...){
-					std::cout << "Underflow error. No item to be removed from stack." << std::endl;
-
-				}
-
-			case 2: 
-					try {
-				std::cout << "Peeking into the stack. Current item: " << stack1.peek() << std::endl;
+		//with random number called, push and pop will execute in random sequences
+		if (randomNum == 1){
+			if (stack1.push(i)){
+				std::cout << "Element " << i << " inserted." << std::endl;
+			}
+			else {
+				std::cout << "Overflow Error." << std::endl;
+			}
+		}
+		else {
+			try {
+				std::cout << "Removing item from stack. " << std::endl; 
+				stack1.pop();
 			}
 			catch (...){
-
-				std::cout << "Peek failed." << std::endl;
-
+				std::cout << "Underflow error. Pop unsuccessful." << std::endl;
 			}
-
 		}
 
+		try {
+				std::cout << "Peeking into the stack. " << stack1.peek() << std::endl;
+			}
+			catch (...){
+				std::cout << "Peek failed." << std::endl;
+			}
 
 
 		if (stack1.isEmpty()){
@@ -53,18 +46,10 @@ int main(int argc, char** argv){
 		else {
 			std::cout << "Stack is not empty." << std::endl;
 		}
-    
+
 	}
 
 	stack1.printStack();
-
-
-
-
-		
-
-		
-
 
 
 

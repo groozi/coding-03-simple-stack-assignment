@@ -14,13 +14,12 @@ class Stack
 {
     public:
     Stack();
-    Stack(int);
     
     // declaring all the functions
     bool push(int);
     bool pop();
-    bool isEmpty();
     int peek();
+    bool isEmpty();
     void printStack(); //for debugging purposes only
 
     private:
