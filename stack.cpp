@@ -15,38 +15,39 @@ Stack::Stack(){
 // function to insert data into stack
 bool Stack::push(int entry)
 {
-	bool executed = false; 
+	//bool executed = false; 
 
 	//does not allow negative numbers to be added to stack
     if(top < SIZE && entry >= 0)
     {
+    	top++;
         stack[++top] = entry;
-        executed = true;
+        //executed = true;
+        return true;
     } 
-    return executed;
+    if (top == SIZE-1 ){
+    	throw 1;
+    } else{
+    	throw 'e';
+    }
+
+
+
+
+    //return executed;
     
 }
 
 // function to remove data from the top of the stack
 bool Stack::pop()
 {
-	bool executed = false;
-
 	if (!isEmpty()){
 		top--;
-		executed = true;
-		return executed;
+		return true;
 	}
 	else{
 		throw -1;
 	} 
-	
-}
-
-// function to check if stack is empty
-bool Stack::isEmpty()
-{
-        return (top == -1);
 }
 
 int Stack::peek(){
@@ -56,7 +57,12 @@ int Stack::peek(){
 	else {
 		throw -1;
 	}
+}
 
+// function to check if stack is empty
+bool Stack::isEmpty()
+{
+    return (top == -1);
 }
 
 //function ONLY for debugging/testing purposes

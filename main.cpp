@@ -10,6 +10,40 @@ int main(int argc, char** argv){
 
 	Stack stack1;
 
+	std::cout << "Testing with push() and pop() executing in random order followed by peek() and isEmpty()" << std::endl;
+
+
+	for (int i=0; i <= SIZE + 500; i++){
+		int random1 = std::rand() % 4;
+		int random2 = std::rand() % 1000;
+
+		if (random1==0){
+			std::cout << "Atempting to push. Pushing... " << std::endl;
+
+			try {
+				std::cout << stack1.push(random2) << std::endl;
+			}
+			catch(int e){
+				std::cout << "Overflow error." << std::endl;
+			}
+			catch(char e){
+				std::cout << "Error. Invalid entry." << std::endl;
+			}
+
+		}
+	
+
+
+
+
+
+
+
+
+	}
+
+	/*
+
 	for (int i = 0; i <= SIZE + 200; i++){
 		int randomNum = std::rand() % 2;
 
@@ -39,18 +73,43 @@ int main(int argc, char** argv){
 				std::cout << "Peek failed." << std::endl;
 			}
 
-
 		if (stack1.isEmpty()){
 			std::cout << "Stack is empty." << std::endl;
 		}
 		else {
 			std::cout << "Stack is not empty." << std::endl;
 		}
-
 	}
+
+	*/
 
 	stack1.printStack();
 
+	/*
+	Stack stack2;
+
+	std::cout << "Testing pop() method" << std::endl;
+	for (int i = 0; i < SIZE +1; i++){
+
+		int random = std::rand() % 100;
+
+		if (stack1.push(random)){
+			std::cout << "Inserted " << random << " to stack." << std::endl;
+		} else {
+			std::cout << "Overflow Error." << std::endl;
+		}
+
+		try {
+			std::cout << "Peeking.. " << stack1.peek() << std::endl;
+		}
+		catch(...){
+			std::cout << "Peek unsuccessful." << std::endl;
+		}
+
+
+	}
+
+	*/
 
 
 	return 0;
