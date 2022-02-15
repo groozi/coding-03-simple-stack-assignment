@@ -18,21 +18,18 @@ bool Stack::push(int entry)
 	//bool executed = false; 
 
 	//does not allow negative numbers to be added to stack
-    if(top < SIZE && entry >= 0)
+    if(top < SIZE && entry > 0)
     {
     	top++;
-        stack[++top] = entry;
+        stack[top] = entry;
         //executed = true;
         return true;
     } 
-    if (top == SIZE-1 ){
+    else if (top == SIZE-1 ){
     	throw 1;
     } else{
     	throw 'e';
     }
-
-
-
 
     //return executed;
     
@@ -68,8 +65,8 @@ bool Stack::isEmpty()
 //function ONLY for debugging/testing purposes
 void Stack::printStack(){
 	if (!isEmpty()){
-		for (int i=0; i <= SIZE; i++){
-			std::cout << "Element at position " << i << " is " << stack[i] << std::endl;
+		for (int i=0; i < SIZE ; i++){
+			std::cout << "Element at position " << i+1 << " is " << stack[i] << std::endl;
 		}
 	}
 	else {
