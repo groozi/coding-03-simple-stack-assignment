@@ -8,19 +8,16 @@
 #define STACK_H
 
 #define SIZE 10
-#include <iostream>
 
 class Stack
 {
     public:
-    Stack();
+        Stack();
     
-    // declaring all the functions
-    bool push(int);
-    bool pop();
-    int peek();
-    bool isEmpty();
-    void printStack(); //for debugging purposes only
+        bool push(int);
+        bool pop();
+        int peek();
+        bool isEmpty();
 
     private:
         int top;

@@ -12,4 +12,3 @@
 #include "stack.h"
 
 #endif //STACK_MAIN_H
-
