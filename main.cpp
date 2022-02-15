@@ -64,28 +64,39 @@ int main(int argc, char** argv){
 	stack1.printStack();
 
 	Stack stack2;
+	stack2.printStack();
 
 	//for loop to test for random operations of numbers
-	for (int i = 0; i < SIZE + 100; i++){
-		int random = std::rand() % 100;
-		int result = (random*3)*i/random+2;
+	for (int i = 0; i < SIZE+10; i++){
+		int random = std::rand() % 50;
+		int result = random*random;
 
-		std::cout << "Random number is: " << random << " Result is: " << ((random*3)*i/random+2) << std::endl;
+		std::cout << "Random number is: " << random << " Result of operation is: " << result << std::endl;
 
 		try {
-			std::cout << "Attempting to push operation with random number: " << std::endl;
+			std::cout << "Pushing " << result << ".... " << std::endl;
 			stack2.push(result);
 		}
 		catch(int e){
-			std::cout << "Overflow error." << std::endl;
+				std::cout << "Overflow error." << std::endl;
 		}
-		catch(...){
+		catch(char e){
 			std::cout << "Error. Invalid entry." << std::endl;
 		}
 
 		std::cout << std::endl;
+
+		if (stack1.isEmpty()){
+			std::cout << "Stack is empty." << std::endl;
+		}
+		else {
+			std::cout << "Stack is not empty." << std::endl;
+		}
+
 	}
 
+
+stack2.printStack();
 
 
 
@@ -94,6 +105,6 @@ int main(int argc, char** argv){
 	
 }
  
-
+ 
 
 
