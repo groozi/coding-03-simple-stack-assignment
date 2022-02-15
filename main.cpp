@@ -22,7 +22,7 @@ int main(int argc, char** argv){
         int random2 = std::rand() % 1000;
 
         if (random1==0){
-            std::cout << "Atempting to push " << random2 << ". Pushing... " << std::endl;
+            std::cout << "Attempting to push " << random2 << ". Pushing... " << std::endl;
 
             try {
                 stack1.push(random2);

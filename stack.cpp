@@ -48,7 +48,6 @@ int Stack::peek(){
     }
 }
 
-// function to check if stack is empty
 bool Stack::isEmpty()
 {
     return (top == -1);
