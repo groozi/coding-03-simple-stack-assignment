@@ -13,25 +13,18 @@ Stack::Stack(){
 }
 
 // function to insert data into stack
-bool Stack::push(int entry)
-{
-	//bool executed = false; 
+bool Stack::push(int entry){
 
-	//does not allow negative numbers to be added to stack
-    if(top < SIZE && entry > 0)
-    {
-    	top++;
-        stack[top] = entry;
-        //executed = true;
+    if(top < SIZE){
+        stack[++top] = entry;
         return true;
     } 
+    
     else if (top == SIZE-1 ){
     	throw 1;
     } else{
     	throw 'e';
     }
-
-    //return executed;
     
 }
 
@@ -39,7 +32,8 @@ bool Stack::push(int entry)
 bool Stack::pop()
 {
 	if (!isEmpty()){
-		top--;
+		stack[top] = 0;
+		--top;
 		return true;
 	}
 	else{
@@ -66,7 +60,8 @@ bool Stack::isEmpty()
 void Stack::printStack(){
 	if (!isEmpty()){
 		for (int i=0; i < SIZE ; i++){
-			std::cout << "Element at position " << i+1 << " is " << stack[i] << std::endl;
+			std::cout  << stack[top] << std::endl;
+			top--;
 		}
 	}
 	else {
