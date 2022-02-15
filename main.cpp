@@ -8,31 +8,32 @@
 
 int main(int argc, char** argv){
 
-	Stack stack1;
+    Stack stack1;
 
-	/*
-	 * testing for random orders of execution for pop and push; 
-	 * pushing random numbers from 0 to 1000 followed by calling peek() and isEmpty()
-	 * in every loop execution
-	*/
+    /*
+     * testing random orders of execution for pop and push; 
+     * pushing random numbers from 0 to 1000 followed by calling peek() and isEmpty()
+     * in every loop execution
+     */
 
-	for (int i=0; i <= SIZE + 5000; i++){
+    for (int i=0; i <= SIZE + 5000; i++){
 
-		int random1 = std::rand() % 2;
-		int random2 = std::rand() % 1000;
+        int random1 = std::rand() % 2;
+        int random2 = std::rand() % 1000;
 
-		if (random1==0){
-			std::cout << "Atempting to push " << random2 << ". Pushing... " << std::endl;
+        if (random1==0){
+            std::cout << "Atempting to push " << random2 << ". Pushing... " << std::endl;
 
-			try {
-				stack1.push(random2);
+            try {
+                stack1.push(random2);
+            }
+            catch(int e){
+                std::cout << "Overflow error." << std::endl;
+            }
+            catch(char e){
+            std::cout << "Error. Invalid entry." << std::endl;
 			}
-			catch(int e){
-				std::cout << "Overflow error." << std::endl;
-			}
-			catch(char e){
-				std::cout << "Error. Invalid entry." << std::endl;
-			}
+
 		} else{
 
 			try {
@@ -61,13 +62,14 @@ int main(int argc, char** argv){
 		std::cout << std::endl;
 	}
 
-	stack1.printStack();
-
 	Stack stack2;
-	stack2.printStack();
 
-	//for loop to test for random operations of numbers
-	for (int i = 0; i < SIZE+10; i++){
+	/* loop to test push with random number operations
+	 * tests pushing past the stack size limit
+	 */
+
+	std::cout << "TESTING RANDOMIZED ORDER OF OPERATIONS WITH RANDOM NUMBERS" << std::endl;
+	for (int i = 0; i < SIZE + 10; i++){
 		int random = std::rand() % 50;
 		int result = random*random;
 
@@ -84,19 +86,40 @@ int main(int argc, char** argv){
 			std::cout << "Error. Invalid entry." << std::endl;
 		}
 
-		std::cout << std::endl;
+			try {
+				std::cout << "Peeking into the stack. " << stack2.peek() << std::endl;
+			}
+			catch (...){
+				std::cout << "Peek failed." << std::endl;
+			}
+	
 
-		if (stack1.isEmpty()){
-			std::cout << "Stack is empty." << std::endl;
-		}
-		else {
-			std::cout << "Stack is not empty." << std::endl;
-		}
+			std::cout << std::endl;
+	}
+
+
+
+Stack stack3;
+
+
+	
+
+	std::cout << "TESTING INPUTTING STRING TO PUSH FUNCTION" << std::endl;
+
+	char testInput[] = {"String test input"};
+
+	try {
+		stack3.push(x);
+	}
+	catch (...){
+		std::cout << "Error. Invalid entry." << std::endl;
 
 	}
 
 
-stack2.printStack();
+	
+stack3.printStack();
+
 
 
 

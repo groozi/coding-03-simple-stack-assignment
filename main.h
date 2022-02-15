@@ -8,8 +8,8 @@
 #define STACK_MAIN_H
 
 #include <iostream>
-#include "stack.h"
 #include <cstdlib>
+#include "stack.h"
 
 #endif //STACK_MAIN_H
 

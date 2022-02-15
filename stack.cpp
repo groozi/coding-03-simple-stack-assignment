@@ -15,6 +15,8 @@ Stack::Stack(){
 // function to insert data into stack
 bool Stack::push(int entry){
 
+	bool executed = false;
+	
     if(top < SIZE-1){
         stack[++top] = entry;
         return true;
